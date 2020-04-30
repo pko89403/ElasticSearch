@@ -1,0 +1,2 @@
+FROM docker.elastic.co/kibana/kibana:7.6.2
+COPY --chown=kibana:kibana kibana.yml /usr/share/kibana/config/kibana.yml
