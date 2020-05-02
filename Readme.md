@@ -1,8 +1,14 @@
+# 참고 
+https://gem1n1.tistory.com/83 velog님의 가장 정리가 잘 되어져있다.
+
+
+
 # Issue
 ## Kibana
 > connect ECONNREFUSED 0.0.0.0:9200
 아 도커 container 자기 스스로를 찌르고 있구나...
 
+# DOCKER
 ## 도커 네트워크
 각 컨테이너는 독립된 네트워크 공간을 할당 받는다 ( linux namespace )   
 네 가지의 도커 네트워크 모드 있다   

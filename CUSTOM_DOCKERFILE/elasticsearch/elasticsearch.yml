@@ -5,4 +5,4 @@ http.port : 9200 # HTTP API 호출을 위한 포트 번호를 지정한다
 transport.tcp.port : 9300 # 엘라스틱서치 클러스터가 접근할 수 있는 TCP 포트
 node.master : true # 마스터 노드로 동작 여부를 지정한다. 
 node.data : true # 데이터 노드로 동작 여부를 지정한다.
-path.repo : ["/usr/share/elasticsearch/backup"] # 엘라스틱서치의 인덱스를 백업하기 위한 스탭샷의 경로를 지정한다.
+path.repo : ["/usr/share/elasticsearch/backup/"] # 엘라스틱서치의 인덱스를 백업하기 위한 스탭샷의 경로를 지정한다.
