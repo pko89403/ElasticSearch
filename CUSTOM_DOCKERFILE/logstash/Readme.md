@@ -11,4 +11,5 @@ https://pcconsoleoraksil.tistory.com/249?category=1073544
 
 ### Shoot the log
 > echo 'Hello world!' | nc localhost 9900        
+
 ElasticSearch(Index Management) kibana(Index Patterns)에서 index를 등록해야한다. 그러면 보여
