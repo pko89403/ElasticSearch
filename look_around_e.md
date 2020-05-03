@@ -28,7 +28,6 @@ PUT /movie/_doc/1
 }
 
 GET /movie
-
 DELETE  /movie  
 PUT /movie
 {

@@ -37,10 +37,19 @@
 ### 집계 API
 문서 통계
 
+---
+### 스키마리스(Schemaless)
+스키마리스(Schemaless)라는 기능은 인덱스 생성 과정 없이 문서를 추가해도 색인되도록 지원하는 기능    
+강력한 기능을 제공하며, 다양한 형태의 비정형 데이터를 하나의 인덱스로 구성할 수 있다    
+데이터에 대한 매핑을 자동으로 생성하는 편리한 기능을 제공한다 
 # 참고 
 - https://gem1n1.tistory.com/83 velog님의 블로그는 항상 정리가 잘 되어져있다
 
 # Issue
+## Elastic Search
+> The mapping definition cannot be nested under a type [_doc] unless include_type_name is set to true
+Mapping types are no longer supported in versions 7.x. My suggestion is to remove _doc type from your mappings.   
+https://stackoverflow.com/questions/58824489/where-to-put-include-type-name-in-config-exs
 ## Kibana
 > connect ECONNREFUSED 0.0.0.0:9200
 아 도커 container 자기 스스로를 찌르고 있구나...
