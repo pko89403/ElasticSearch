@@ -1,3 +1,4 @@
+~~~ 
 PUT movie_kibana_execute/_doc/1
 {
   "message":"helloworld"
@@ -53,3 +54,4 @@ PUT /movie
     }
   }
 }
+~~~
