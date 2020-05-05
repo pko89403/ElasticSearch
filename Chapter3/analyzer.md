@@ -179,3 +179,80 @@ POST movie_stem_analyzer/_analyze
   "text" : "Harry Potter and the Chamber of Secrets"
 }
 ~~~
+~~~json
+DELETE movie_analyzer
+PUT movie_analyzer 
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "synonym_analyzer" : {
+          "tokenizer" : "standard",
+          "filter" : [ "lowercase",
+                       "synonym_filter"
+          ]
+        }
+      },
+      "filter": {
+        "synonym_filter" : {
+          "type" : "synonym",
+          "ignore_case" : true,
+          "synonyms_path" : "analysis/synonym.txt"
+        }
+      }
+    }
+  }
+}
+POST movie_analyzer/_analyze
+{
+  "analyzer": "synonym_analyzer",
+  "text": "Elasticsearch Harry Potter"
+}
+POST movie_analyzer/_close
+POST movie_analyzer/_open
+~~~
+~~~json
+PUT movie_dynamic/_doc/1
+{
+  "nationAlt" : "한국"
+}
+PUT movie_dynamic/_doc/1
+{
+  "nationAlt" : "한국"
+}
+POST movie_dynamic/_doc/1?version=1
+{
+  "nationAlt" : "한국"
+}
+~~~
+~~~json
+GET movie_dynamic/_doc/1
+
+POST movie_dynamic/_delete_by_query
+{
+  "query" : {
+    "term" : {
+      "nationAlt" : "한국"
+    }
+  }
+}
+~~~
+~~~json
+PUT movie_dynamic/_doc/1
+{
+  "counter" : 1000,
+  "movieNmEn" : "Last Child"
+}
+
+POST movie_dynamic/_doc/1/_update
+{
+  "script" : {
+    "source" : "ctx._source.counter += params.count",
+    "lang" : "painless",
+    "params" : {
+      "count" : 1
+    }
+  }
+}
+GET movie_dynamic/_doc/1
+~~~

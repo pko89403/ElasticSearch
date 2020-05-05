@@ -179,4 +179,16 @@ Token Filter <-> 사전
   - 동의어 추가
   - 동의어 치환 
 ## Document API
-
+엘라스틱서치에서 제공하는 대표적인 Document API
+- Index API : 문서를 생성
+- Get API : 문서를 조회
+- Delete API : 문서를 삭제
+- Update API : 문서를 수정
+- Bulk API : 대량의 문서를 처리
+- Reindex API : 문서를 복사
+  
+### 문서 파라미터
+- 문서 ID 자동 생성
+- 버전 관리    
+Update API를 이용할 경우 내부적으로 스냅숏을 생성해서 문서를 수정하고 인덱스에 다시 재색인하는데, 이때 버전 정보를 이용한다.    
+버전은 1부터 시작해서 도큐먼트가 갱신/삭제될 때마다 증가한다 
